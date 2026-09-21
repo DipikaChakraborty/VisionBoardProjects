@@ -61,7 +61,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL_REST",
+											"referenceName": "PL_CSV",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true
