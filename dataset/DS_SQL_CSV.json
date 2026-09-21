@@ -1,0 +1,16 @@
+{
+	"name": "DS_SQL_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_CSV",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "olist_order_payments_dataset"
+		}
+	}
+}

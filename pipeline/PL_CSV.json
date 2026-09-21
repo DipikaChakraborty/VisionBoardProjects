@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PL_REST",
+				"name": "CPY_CSV",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,48 +16,43 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
-						"paginationRules": {
-							"supportRFC5988": "true"
-						}
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "RestSink",
-						"httpRequestTimeout": "00:05:00",
-						"requestInterval": 10,
-						"requestMethod": "POST",
-						"writeBatchSize": 10000,
-						"httpCompressionType": "none"
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "DS_SQL_CSV",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "DS_CSV_Parquet",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"parameters": {
-			"Trigger": {
-				"type": "string"
-			}
-		},
-		"variables": {
-			"Mapping": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }
