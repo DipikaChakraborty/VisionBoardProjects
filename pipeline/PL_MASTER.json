@@ -12,10 +12,39 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "Trigger_variable1",
+					"variableName": "Trigger_variable",
 					"value": {
 						"value": "@if(equals(pipeline().parameters.Trigger, null),pipeline().TriggerName,pipeline().parameters.Trigger)",
 						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "EXEC_RAW_DATA",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "SET_VAR_TRIGGER",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL2_RAW_DATA",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Trigger": {
+							"value": "@pipeline().parameters.Trigger",
+							"type": "Expression"
+						}
 					}
 				}
 			}
@@ -27,9 +56,6 @@
 		},
 		"variables": {
 			"Trigger_variable": {
-				"type": "String"
-			},
-			"Trigger_variable1": {
 				"type": "String"
 			}
 		},
