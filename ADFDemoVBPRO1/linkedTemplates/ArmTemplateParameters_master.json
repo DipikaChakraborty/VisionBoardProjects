@@ -20,6 +20,9 @@
 		"LS_ADLS_SQL_accountKey": {
 			"value": ""
 		},
+		"LS_AZSQLDB2_password": {
+			"value": ""
+		},
 		"LS_AZSQL_DB3_password": {
 			"value": ""
 		},
@@ -73,6 +76,15 @@
 		},
 		"LS_ADLS_SQL_properties_typeProperties_url": {
 			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_AZSQLDB2_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_AZSQLDB2_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB2_properties_typeProperties_userName": {
+			"value": "access-data-dev"
 		},
 		"LS_AZSQL_DB3_properties_typeProperties_server": {
 			"value": "sql-srver-vb-dev1.database.windows.net"
