@@ -1,0 +1,135 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFDemoVBPRO1"
+		},
+		"DS_AZSQL_SRCDB_password": {
+			"value": ""
+		},
+		"LS_ADLS_SQL_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_ADLS_Parquet1_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_SINK_Parquet1_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_DB_password": {
+			"value": ""
+		},
+		"LS_Snowflake1_password": {
+			"value": ""
+		},
+		"LS_Snowflake_PARQUET_password": {
+			"value": ""
+		},
+		"LS_SqlServer1_password": {
+			"value": ""
+		},
+		"DS_AZSQLDB2_password": {
+			"value": ""
+		},
+		"LS_AZSQL_DB3_password": {
+			"value": ""
+		},
+		"LS_ADLS_CSV_accountKey": {
+			"value": ""
+		},
+		"DS_CSV_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_CSV_password": {
+			"value": ""
+		},
+		"DS_AZSQL_SRCDB_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"DS_AZSQL_SRCDB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"DS_AZSQL_SRCDB_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_ADLS_SQL_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_ADLS_Parquet1_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_SINK_Parquet1_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_Parquet1_sasUri": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_SQL_DB_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_SQL_DB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_SQL_DB_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_Snowflake1_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_Snowflake_PARQUET_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS01"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"value": "vbadeproject"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"value": "VisionBoard"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5UVuvx/data"
+		},
+		"DS_AZSQLDB2_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"DS_AZSQLDB2_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"DS_AZSQLDB2_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_AZSQL_DB3_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_AZSQL_DB3_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_DB3_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_ADLS_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"DS_CSV_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsdevvisionboard01.dfs.core.windows.net/"
+		},
+		"LS_SQL_CSV_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS01"
+		},
+		"LS_SQL_CSV_properties_typeProperties_database": {
+			"value": "vbadeproject"
+		},
+		"LS_SQL_CSV_properties_typeProperties_userName": {
+			"value": "VisionBoard"
+		}
+	}
+}
