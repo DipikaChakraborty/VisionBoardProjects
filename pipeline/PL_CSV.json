@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CPY_CSV",
+				"name": "PL_REST",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
