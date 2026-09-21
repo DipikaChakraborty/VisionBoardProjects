@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB2'"
 		},
+		"LS_AZSQL_CSV_META_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_CSV_META'"
+		},
 		"LS_AZSQL_DB3_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_DB3'"
@@ -104,6 +108,18 @@
 			"defaultValue": "sql-db-vb-dev"
 		},
 		"LS_AZSQLDB2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "access-data-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "access-data-dev"
 		},
@@ -276,6 +292,28 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('LS_AZSQLDB2_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQL_CSV_META')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQL_CSV_META_password')]"
 					}
 				}
 			},
@@ -497,12 +535,12 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZSQL_DB')]",
+			"name": "[concat(parameters('factoryName'), '/DS_AZSQL_CSV_META')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SQL_DB",
+					"referenceName": "LS_AZSQL_CSV_META",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -511,25 +549,7 @@
 				"typeProperties": {}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SQL_DB')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZSQL_SRCDB')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DS_AZSQL_SRCDB",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DS_AZSQL_SRCDB')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQL_CSV_META')]"
 			]
 		}
 	]

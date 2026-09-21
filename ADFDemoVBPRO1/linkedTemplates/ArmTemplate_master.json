@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB2'"
 		},
+		"LS_AZSQL_CSV_META_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_CSV_META'"
+		},
 		"LS_AZSQL_DB3_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_DB3'"
@@ -112,6 +116,18 @@
 			"defaultValue": "sql-db-vb-dev"
 		},
 		"LS_AZSQLDB2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "access-data-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "access-data-dev"
 		},
@@ -236,6 +252,9 @@
 					"LS_AZSQLDB2_password": {
 						"value": "[parameters('LS_AZSQLDB2_password')]"
 					},
+					"LS_AZSQL_CSV_META_password": {
+						"value": "[parameters('LS_AZSQL_CSV_META_password')]"
+					},
 					"LS_AZSQL_DB3_password": {
 						"value": "[parameters('LS_AZSQL_DB3_password')]"
 					},
@@ -292,6 +311,15 @@
 					},
 					"LS_AZSQLDB2_properties_typeProperties_userName": {
 						"value": "[parameters('LS_AZSQLDB2_properties_typeProperties_userName')]"
+					},
+					"LS_AZSQL_CSV_META_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_server')]"
+					},
+					"LS_AZSQL_CSV_META_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_database')]"
+					},
+					"LS_AZSQL_CSV_META_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQL_CSV_META_properties_typeProperties_userName')]"
 					},
 					"LS_AZSQL_DB3_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZSQL_DB3_properties_typeProperties_server')]"
@@ -378,6 +406,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADFDemoVBPRO1_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADFDemoVBPRO1_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFDemoVBPRO1_ArmTemplate_1')]"
 			]
 		}
 	]

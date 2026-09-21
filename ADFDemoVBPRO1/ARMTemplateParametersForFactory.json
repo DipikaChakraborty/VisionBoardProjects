@@ -23,6 +23,9 @@
 		"LS_AZSQLDB2_password": {
 			"value": ""
 		},
+		"LS_AZSQL_CSV_META_password": {
+			"value": ""
+		},
 		"LS_AZSQL_DB3_password": {
 			"value": ""
 		},
@@ -84,6 +87,15 @@
 			"value": "sql-db-vb-dev"
 		},
 		"LS_AZSQLDB2_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_server": {
+			"value": "sql-srver-vb-dev1.database.windows.net"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_CSV_META_properties_typeProperties_userName": {
 			"value": "access-data-dev"
 		},
 		"LS_AZSQL_DB3_properties_typeProperties_server": {
