@@ -3,16 +3,13 @@
 	"properties": {
 		"parameters": {
 			"storage_account_loc ": {
-				"type": "string",
-				"defaultValue": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata"
+				"type": "string"
 			},
 			"sheetname": {
-				"type": "string",
-				"defaultValue": "@activity('LKUP_JOB_DETAILS').output.firstRow.sheetname"
+				"type": "string"
 			},
 			"filename": {
-				"type": "string",
-				"defaultValue": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile"
+				"type": "string"
 			}
 		},
 		"annotations": [],
