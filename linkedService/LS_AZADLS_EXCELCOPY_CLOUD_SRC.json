@@ -1,0 +1,12 @@
+{
+	"name": "LS_AZADLS_EXCELCOPY_CLOUD_SRC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsdevvisionboard01.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDE2MkNGRjlGLTlDQTAtNDZFNC05MjVFLTg4QjIzRDFGNDBFOF9hZmYzNjQ1Yi01ZmIwLTQ5ZWUtOWNkOS1jY2NhODg2NWI4NDEiDQp9"
+		}
+	}
+}
